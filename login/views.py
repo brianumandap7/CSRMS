@@ -17,4 +17,4 @@ def lout(request):
 	}
 
 	logout(request)
-	return render(request, 'login/login.html', query)
+	return render(request, 'login/logout.html', query)
