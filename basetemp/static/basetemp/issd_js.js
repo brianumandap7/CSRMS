@@ -4,3 +4,4 @@ window.addEventListener("load", function() {
     document.getElementById("page-content").style.visibility = "visible";
   }, 2000); // 2 seconds
 });
+

@@ -32,6 +32,7 @@ INSTALLED_APPS = [
     'login.apps.LoginConfig',
     'basetemp.apps.BasetempConfig',
     'issd.apps.IssdConfig',
+    'cs.apps.CsConfig',
 ]
 
 MIDDLEWARE = [
