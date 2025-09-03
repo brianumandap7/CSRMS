@@ -33,6 +33,8 @@ INSTALLED_APPS = [
     'basetemp.apps.BasetempConfig',
     'issd.apps.IssdConfig',
     'cs.apps.CsConfig',
+    'issp.apps.IsspConfig',
+    'ipar.apps.IparConfig',
 ]
 
 MIDDLEWARE = [

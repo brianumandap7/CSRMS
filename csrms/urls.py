@@ -26,6 +26,8 @@ urlpatterns = [
     path('', include('login.urls')),
     path('issd/', include('issd.urls')),
     path('cs/', include('cs.urls')),
+    path('issp/', include('issp.urls')),
+    path('ipar/', include('ipar.urls')),
 ]
 
 if settings.DEBUG:
