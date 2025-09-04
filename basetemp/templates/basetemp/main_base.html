@@ -30,6 +30,8 @@
   <!-- datatables -->
   <link rel="stylesheet" href="https://cdn.datatables.net/1.11.4/css/jquery.dataTables.min.css">
 
+  
+
   <!-- Page Specific CSS libraries -->
   {% block plugins_css %}{% endblock plugins_css %}
   <!-- Page Specific CSS libraries -->
@@ -220,31 +222,31 @@ hr {
   </aside>
   <!-- logout modal -->
   <div class="modal fade" id="logoutdiv" tabindex="-1" role="dialog" aria-labelledby="logoutdiv" aria-hidden="true">
-  <div class="modal-dialog" role="document">
-    <div class="modal-content">
-      
-      <div class="modal-body">
-        <h6>Are you sure you want to logout?</h6>
-      </div>
-      <div class="modal-footer">
-        <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancel</button>
-        <a href="/logout/" class="btn btn-danger" type="button">Proceed</a>
-        
-      </div>
-    </div>
+  <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-content border-0 rounded-3 shadow">
+        <div class="modal-header bg-danger text-white">
+            <h5 class="modal-title" id="logoutModalLabel">Confirm Logout</h5>
+            <button type="button" class="btn-close btn-close-white" data-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body text-center">
+            <p class="mb-0">Are you sure you want to log out?</p>
+        </div>
+        <div class="modal-footer justify-content-center">
+            <a href="/logout/" class="btn btn-danger px-4">Proceed</a>
+            <button type="button" class="btn btn-secondary px-4" data-dismiss="modal">Cancel</button>
+        </div>
+        </div>
     </div>
   </div>
   <!-- end of logout modal -->
   <!-- Content Wrapper. Contains page content -->
-  <div class="content-wrapper">
-    <!-- Content Header (Page header) -->
+  
+    <div class="container-fluid">
 
-    <!-- /.content-header -->
+      {% block content %}{% endblock content %}
 
-    <!-- Main content -->
-    {% block content %}{% endblock content %}
-    <!-- /.content -->
-  </div>
+    </div>
+
   <!-- /.content-wrapper -->
   <footer class="main-footer">
     <strong>Copyright &copy; 2025 <a href="https://dotr.gov.ph">Information Systems and Security Division</a>.</strong>
@@ -258,7 +260,6 @@ hr {
   <!-- /.control-sidebar -->
 </div>
 <!-- ./wrapper -->
-
 <!-- jQuery -->
 <script src="{% static 'basetemp/plugins/jquery/jquery.min.js' %}"></script>
 <!-- jQuery UI 1.11.4 -->
