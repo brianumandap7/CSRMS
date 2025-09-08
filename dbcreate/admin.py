@@ -1,5 +1,5 @@
 from django.contrib import admin
-from .models import Ticket_tbl, IR_tbl, Roles, Responder_tbl, Classification_tbl, Severity_tbl, TLP_tbl
+from .models import Ticket_tbl, IR_tbl, Roles, Responder_tbl, Classification_tbl, Severity_tbl, TLP_tbl, Status_tbl
 # Register your models here.
 
 
@@ -10,3 +10,4 @@ admin.site.register(Responder_tbl)
 admin.site.register(Classification_tbl)
 admin.site.register(Severity_tbl)
 admin.site.register(TLP_tbl)
+admin.site.register(Status_tbl)

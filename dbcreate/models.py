@@ -10,7 +10,7 @@ class Roles(models.Model):
 	Role = models.CharField(max_length=255, blank=True, null=True)
 
 	def __str__(self):
-		return self.Roles
+		return self.Role
 
 class Responder_tbl(models.Model):
 	Responder_id = models.AutoField(primary_key=True)
@@ -18,31 +18,35 @@ class Responder_tbl(models.Model):
 	Role = models.ForeignKey(Roles, on_delete = models.CASCADE, related_name = 'role', null = True, blank = True)
 
 	def __str__(self):
-		return self.Responder_tbl
+		return str(self.Resp)
 
 class Classification_tbl(models.Model):
 	Classification_id = models.AutoField(primary_key=True)
 	Classification = models.CharField(max_length=255, blank=True, null=True)
+	Description = models.TextField(blank = True, null = True)
 
 	def __str__(self):
-		return self.Classification_tbl
+		return self.Classification
 
 class Severity_tbl(models.Model):
 	Serverity_id = models.AutoField(primary_key=True)
 	Severity = models.CharField(max_length=255, blank=True, null=True)
+	Description = models.TextField(blank = True, null = True)
 
 	def __str__(self):
-		return self.Severity_tbl
+		return self.Severity
 
 class TLP_tbl(models.Model):
 	TLP_id = models.AutoField(primary_key=True)
 	TLP = models.CharField(max_length=255, blank=True, null=True)
+	Description = models.TextField(blank = True, null = True) 
 
 	def __str__(self):
-		return self.TLP_tbl
+		return self.TLP
 
 class Ticket_tbl(models.Model):
 	Ticket_id = models.AutoField(primary_key=True)
+	Ticket_number = models.CharField(max_length=255, blank=True, null=True)
 	Classification = models.ForeignKey(Classification_tbl, on_delete = models.CASCADE, related_name = 'ticket_classification', null = True, blank = True)
 	Severity = models.ForeignKey(Severity_tbl, on_delete = models.CASCADE, related_name = 'ticket_severity', null = True, blank = True)
 	Score = models.PositiveSmallIntegerField(validators=[MinValueValidator(1), MaxValueValidator(100)], null= True, blank = True)
@@ -56,7 +60,14 @@ class Ticket_tbl(models.Model):
 	acknowledged_by = models.ForeignKey(Responder_tbl, on_delete=models.CASCADE, related_name = 'acknowledged_by', null= True, blank = True)
 
 	def __str__(self):
-		return self.Ticket_tbl
+		return self.Ticket_number
+
+class Status_tbl(models.Model):
+	Status_id = models.AutoField(primary_key=True)
+	Status = models.CharField(max_length=255, blank=True, null=True)
+
+	def __str__(self):
+		return self.Status
 
 class IR_tbl(models.Model):
 	IR_id = models.AutoField(primary_key=True)
@@ -65,7 +76,7 @@ class IR_tbl(models.Model):
 	Impact = models.TextField(null=True, blank=True)
 	Root_cause = models.TextField(null=True, blank=True)
 	Lessons_learned = models.TextField(null=True, blank=True)
-	Status = models.CharField(max_length=255, blank=True, null=True) #relational
+	Status = models.ForeignKey(Status_tbl, on_delete=models.CASCADE, null = True, blank = True, related_name = "TStatus")
 
 	def __str__(self):
-		return self.IR_tbl
+		return self.Ticket

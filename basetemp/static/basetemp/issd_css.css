@@ -14,13 +14,14 @@ body {
       left: 0;
       height: 100%;
       width: 100%;
-      background-color: #c20808;
+      background-color: #ffffff !important; /* changed to white */
       display: flex;
       align-items: center;
       justify-content: center;
       z-index: 9999;
       transition: opacity 0.5s ease, visibility 0.5s ease;
     }
+
     .spinner {
       border: 8px solid #f3f3f3;
       border-top: 8px solid #CE1126 !important;
