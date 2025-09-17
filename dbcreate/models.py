@@ -12,10 +12,18 @@ class Roles(models.Model):
 	def __str__(self):
 		return self.Role
 
+class Genders(models.Model):
+	Gender_id = models.AutoField(primary_key=True)
+	Gender = models.CharField(max_length=255, blank=True, null=True)
+
+	def __str__(self):
+		return self.Gender
+
 class Responder_tbl(models.Model):
 	Responder_id = models.AutoField(primary_key=True)
 	Resp = models.ForeignKey(User, on_delete = models.CASCADE, related_name = 'responder', null = True, blank = True)
-	Role = models.ForeignKey(Roles, on_delete = models.CASCADE, related_name = 'role', null = True, blank = True)
+	Gender = models.ForeignKey(Genders, on_delete = models.CASCADE, related_name = 'gender', null = True, blank = True)
+	Roles = models.ManyToManyField(Roles, related_name='resroles', blank=True)
 
 	def __str__(self):
 		return str(self.Resp)

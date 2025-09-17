@@ -168,7 +168,11 @@
                       <td class="d-none d-sm-table-cell">{{items.Severity}}</td>
                       <td>{{items.Responder}}</td>
                       {% if user.is_superuser %}
-                        <td><a href="#" class="btn btn-success">Assign</a></td>
+                        <td>
+                          <a href="#" class="btn btn-success" data-toggle="modal" data-target="#assignModal">
+                            Assign
+                          </a>
+                        </td>
                       {% else %}
                         <td><button class="btn btn-success" disabled>Assign</button></td>
                       {% endif %}
@@ -200,7 +204,7 @@
                         <td>{{adv.Ticket_number}}</td>
                         <td>{{adv.Vulnerability}}</td>
                         <td class="d-none d-sm-table-cell text-justify">{{adv.Description}}</td>
-                        <td class="d-none d-sm-table-cell text-justify">{{adv.Recommendations}}</td>
+                        <td class="d-none d-sm-table-cell text-justify"><pre>{{adv.Recommendations}}</pre></td>
                         <td>
                           <a href="#" class="btn btn-success">View</a>
                         </td>
@@ -237,7 +241,7 @@
       <div class="modal-body" style="flex: 1; overflow-y: auto;">
         <form method="post" enctype="multipart/form-data">
           {% csrf_token %}
-          {% for field in form1 %}
+          {% for field in form %}
             <p>
               {{ field.label|safe }}
               {{ field }}
