@@ -28,13 +28,14 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-    'dbcreate',
+    'dbcreate.apps.DbcreateConfig',
     'login.apps.LoginConfig',
     'basetemp.apps.BasetempConfig',
     'issd.apps.IssdConfig',
     'cs.apps.CsConfig',
     'issp.apps.IsspConfig',
     'ipar.apps.IparConfig',
+    'rest_framework',
 ]
 
 MIDDLEWARE = [

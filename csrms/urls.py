@@ -28,6 +28,7 @@ urlpatterns = [
     path('cs/', include('cs.urls')),
     path('issp/', include('issp.urls')),
     path('ipar/', include('ipar.urls')),
+    path('dbcreate/', include('dbcreate.urls')),
 ]
 
 if settings.DEBUG:
