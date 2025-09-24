@@ -25,19 +25,19 @@
   <section class="content">
     <div class="container-fluid">
 
-      <!-- Small boxes (Stat boxes) -->
+    <!-- Main content -->
       <div class="row">
         <div class="col-lg-3 col-6">
           <div class="small-box bg-info">
             <div class="inner">
-              <h3>150</h3>
-              <p>New Orders</p>
+              <h3>1</h3>
+              <p>Submitted</p>
             </div>
             <div class="icon">
               <i class="ion ion-bag"></i>
             </div>
             <a href="#" class="small-box-footer">
-              More info <i class="fas fa-arrow-circle-right"></i>
+              More info <i class="fas fa-check-circle-right"></i>
             </a>
           </div>
         </div>
@@ -81,15 +81,83 @@
             <a href="#" class="small-box-footer">
               More info <i class="fas fa-arrow-circle-right"></i>
             </a>
-          </div>
-        </div>
-      </div>
 
     </div><!-- /.container-fluid -->
   </section>
   <!-- /.content -->
-</div>
 <!-- /.content-wrapper -->
-
-
+           <!-- Submission Table -->
+        <div class="card">
+          <div class="card-header"><h3 class="card-title">Submission Status</h3></div>
+          <div class="card-body table-responsive">
+          <div style="border-top: 3px solid #194675; padding-top: 10px;">
+            <table class="table table-bordered table-hover text-center" >
+              <thead>
+                <tr>
+                  <th>ISSP</th>
+                  <th>Date of Call for Submission</th>
+                  <th>Submission Date</th>
+                  <th>Status</th>
+                  <th>Link to File</th>
+                  <th>Remarks</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>2027-2029</td>
+                  <td>08 September 2025</td>
+                  <td>08 September 2025</td>
+                  <td><span class="badge badge-success">Submitted</span></td>
+                  <td>
+                    <a href="https://www.google.com" target="_blank">ISSP 2027-2029</a>
+                  </td>
+                  <td><button class="btn btn-sm btn-info" data-toggle="collapse" data-target="#details1">View</button></td>
+               <tr class="collapse" id="details1">
+                  <td colspan="7" class="text-left bg-light">
+                 <p><strong>Detailsssssss:</strong></p>
+                 <p>table, table</p>
+                 <img src="images.png" alt="ISSP 2027-2029" class="img-fluid mb-2">
+                  </td>
+                </tr>
+                <tr>
+                  <td>2024-2026 Amendment (v2) </td>
+                  <td>08 September 2025</td>
+                  <td>08 September 2025</td>
+                  <td><span class="badge badge-info">Ongoing</span></td>
+                  <td>
+                    <a href="https://www.google.com" target="_blank">ISSP 2024-2026 (v2)</a>
+                  </td>
+                </tr>
+                <tr>
+                  <td>2024-2026 Amendment (v1)</td>
+                  <td>08 September 2025</td>
+                  <td>08 September 2025</td>
+                  <td><span class="badge badge-danger">Pending</span></td>
+                  <td>
+                    <a href="https://www.google.com" target="_blank">ISSP 2024-2026 (v1)</a>
+                  </td>
+                </tr>
+                <tr>
+                  <td>2021-2023 Amendment (v2)</td>
+                  <td>08 September 2025</td>
+                  <td>08 September 2025</td>
+                  <td><span class="badge badge-danger">Pending</span></td>
+                  <td>
+                    <a href="https://www.google.com" target="_blank">ISSP 2021-2023 (v2)</a>
+                  </td>
+                </tr>
+                <tr>
+                  <td>2021-2023 Amendment (v1)</td>
+                  <td>08 September 2025</td>
+                  <td>08 September 2025</td>
+                  <td><span class="badge badge-danger">Pending</span></td>
+                  <td>
+                    <a href="https://www.google.com" target="_blank">ISSP 2021-2023 (v1)</a>
+                  </td>
+              </tbody>
+            </table>
+          </div>
+        </div>
+    </section>
+  </div>
 {% endblock content %}
