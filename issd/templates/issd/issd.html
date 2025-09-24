@@ -5,104 +5,219 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="shortcut icon" type="image/png" href="{% static 'basetemp/favicondotr32.png' %}"/>
+  <link rel="shortcut icon" type="image/png" href="{% static 'basetemp/bg_red-blue-white2.png' %}"/>
   <title>ISSD Portal</title>
-  
+
   <!-- Bootstrap 5 -->
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
 
-  <!-- Custom CSS -->
-  <link rel="stylesheet" href="{% static 'basetemp/issd_css.css' %}">
+  <!-- Custom CSS 
+  <link rel="stylesheet" href="{% static 'basetemp/issd_css.css' %}">-->
 
   <style>
-    body {
-      background: #f4f6f9;
+    /* Reset */
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      /*font-family: Arial, Helvetica, sans-serif;*/
       font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     }
 
-    /* Loader - retain your color */
+    body {
+      background: #f9fafc;
+      color: #333;
+    }
 
-    .portal-header {
-      margin-top: 50px;
-      margin-bottom: 30px;
-    }
-    .menu-card {
-      transition: transform 0.2s, box-shadow 0.2s;
-      border: none;
-      border-radius: 1rem;
-      box-shadow: 0 4px 6px rgba(0,0,0,0.1);
-    }
-    .menu-card:hover {
-      transform: translateY(-5px);
-      box-shadow: 0 6px 12px rgba(0,0,0,0.15);
-    }
-    .menu-card img {
-      width: 80px;
-      margin: 20px auto 10px;
-    }
-    .logout-btn {
-      display: inline-block;
-      margin-top: 40px;
-      padding: 10px 25px;
-      background: #dc3545;
+    /* Navbar */
+    #nav {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      background: #1e3a8a;
+      /*background: maroon;*/
+      padding: 15px 40px;
       color: #fff;
-      border-radius: 8px;
+    }
+
+    #nav h1 {
+      font-size: 1.3rem;
+      font-weight: bold;
+    }
+
+    #nav a {
+      color: #fff;
       text-decoration: none;
       font-weight: 500;
-      transition: background 0.2s;
     }
+
+    /* Hero Section */
+    #hero {
+      /*background-image: url('../static/basetemp/bg_red-blue-white2.png');
+      background-size:200px 300px;
+      background-repeat:repeat x;
+      background-position:left bottom;
+      background-attachment:fixed;
+     
+      /*background:linear-gradient(to bottom right, #ffffff 0%, #ffffff 50%, transparent 51%), linear-gradient(to bottom right, transparent 0%, #d12028 30%, #a1131c 60%, #0d2c6e 100%);*/
+      /*background: linear-gradient(to right, #af1e1eff, #f63b3bff);*/
+      /*color: #fff;*/
+      background: linear-gradient(to right, #1e40af, #3b82f6);
+      
+      text-align: center;
+      padding: 80px 20px;
+      color: #fff;
+
+
+    }
+
+    #hero h2 {
+      font-size: 2.5rem;
+      margin-bottom: 15px;
+    }
+
+    #hero p {
+      font-size: 1.2rem;
+      margin-bottom: 25px;
+    }
+
+    #hero button {
+      background: #facc15;
+      border: none;
+      padding: 12px 25px;
+      border-radius: 25px;
+      font-size: 1rem;
+      font-weight: bold;
+      cursor: pointer;
+      transition: 0.3s;
+    }
+
+    #hero button:hover {
+      background: #fde047;
+    }
+
+    /* Modules Section */
+    #modules {
+      display: flex;
+      justify-content: center;
+      gap: 30px;
+      padding: 60px 20px;
+      flex-wrap: wrap;
+    }
+
+    #modules a{
+      text-decoration: none;
+    }
+
+    .card {
+      background: #fff;
+      width: 220px;
+      text-align: center;
+      padding: 25px;
+      border-radius: 15px;
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+      transition: transform 0.3s, box-shadow 0.3s;
+      cursor: pointer;
+    }
+
+    .card:hover {
+      transform: translateY(-8px);
+      box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+    }
+
+    .card img {
+      width: 60px;
+      height: 60px;
+      /*margin-bottom: 15px;*/
+      margin: 0 auto;
+      
+    }
+
+    .card h3 {
+      font-size: 1.2rem;
+      margin-top: 10px;
+      color: #1e3a8a;
+    }
+
+    .logout-btn {
+      display: inline-block;
+      /*margin-top: 1px;*/
+      padding: 3px 13px;
+      background: #dc3545;
+      /*background: #facc15;*/
+      color: #fff;
+      border-radius: 10px;
+      text-decoration: none;
+      /*font-weight: 500;*/
+      font-weight: bold;
+      transition: background 0.3s;
+    }
+
     .logout-btn:hover {
       background: #b02a37;
       color: #fff;
+      /*background: #fde047;*/
+    }
+
+    /* Footer */
+    #footer {
+      background: #1e3a8a;
+      /*background: black;*/
+      color: #fff;
+      text-align: center;
+      padding: 15px;
+      margin-top: 50px;
     }
   </style>
 </head>
 <body>
-  <!-- Loader -->
-  <div id="loader">
-    <div class="spinner"></div>
-  </div>
+  <!-- Main Container -->
+  <div id="main-container">
 
-  <!-- Landing Page -->
-  <div class="container" style="visibility: hidden;" id="page-content">
-    <div class="text-center portal-header">
-      <h1 class="fw-bold">Welcome to ISSD Portal</h1>
-      <p class="text-muted">Choose a module to continue</p>
-    </div>
-    
-    <div class="row g-4 justify-content-center">
-      <div class="col-md-4 col-lg-3">
-        <a href="/cs/" class="text-decoration-none">
-          <div class="card menu-card text-center p-3">
-            <img src="https://cdn-icons-png.flaticon.com/512/3064/3064197.png" alt="CyberSecurity">
-            <h5 class="fw-semibold mt-2">CyberSecurity</h5>
-          </div>
-        </a>
-      </div>
-      <div class="col-md-4 col-lg-3">
-        <a href="/issp/" class="text-decoration-none">
-          <div class="card menu-card text-center p-3">
-            <img src="https://cdn-icons-png.flaticon.com/512/1828/1828961.png" alt="ISSP">
-            <h5 class="fw-semibold mt-2">ISSP</h5>
-          </div>
-        </a>
-      </div>
-      <div class="col-md-4 col-lg-3">
-        <a href="/ipar/" class="text-decoration-none">
-          <div class="card menu-card text-center p-3">
-            <img src="https://cdn-icons-png.flaticon.com/512/1828/1828959.png" alt="IPAR">
-            <h5 class="fw-semibold mt-2">IPAR</h5>
-          </div>
-        </a>
-      </div>
-    </div>
-
-    <div class="text-center">
+    <!-- Navbar -->
+    <div id="nav">
+      <h1>ISSD Portal</h1>
         <button type="button" class="logout-btn" data-bs-toggle="modal" data-bs-target="#logoutModal">
             Logout
         </button>
     </div>
 
-    <!-- Logout Confirmation Modal -->
+    <!-- Hero -->
+    <div id="hero">
+      <h2>Welcome to ISSD Portal</h2>
+      <p>Your one-stop hub for CyberSecurity, ISSP, and IPAR</p>
+      <button onclick="document.getElementById('modules').scrollIntoView({behavior:'smooth'})">
+        Get Started
+      </button>
+    </div>
+
+    <!-- Modules -->
+    <div id="modules">
+      <a href="/cs/">
+        <div class="card">
+          <img src="https://cdn-icons-png.flaticon.com/512/3135/3135715.png" alt="CyberSecurity">
+          <h3>CyberSecurity</h3>
+        </div>
+      </a>
+      <a href="/issp/">
+        <div class="card">
+          <img src="https://cdn-icons-png.flaticon.com/512/1828/1828859.png" alt="ISSP">
+          <h3>ISSP</h3>
+        </div>
+      </a>
+      <a href="/ipar/">
+        <div class="card">
+          <img src="https://cdn-icons-png.flaticon.com/512/1828/1828961.png" alt="IPAR">
+          <h3>IPAR</h3>
+        </div>
+      </a>
+    </div>
+
+    <!-- Footer -->
+    <div id="footer">
+      <p>© 2025 All rights reserved | Information System and Security Division (ISSD) Portal  </p>
+    </div>
+
     <div class="modal fade" id="logoutModal" tabindex="-1" aria-labelledby="logoutModalLabel" aria-hidden="true">
     <div class="modal-dialog modal-dialog-centered">
         <div class="modal-content border-0 rounded-3 shadow">
@@ -120,8 +235,8 @@
         </div>
     </div>
     </div>
-  </div>
 
+  </div> <!-- End of main-container -->
   <script src="{% static 'basetemp/issd_js.js' %}"></script>
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
 </body>
