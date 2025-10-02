@@ -14,162 +14,161 @@
   <!-- Custom CSS 
   <link rel="stylesheet" href="{% static 'basetemp/issd_css.css' %}">-->
 
-  <style>
-    /* Reset */
-    * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
-      /*font-family: Arial, Helvetica, sans-serif;*/
-      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    }
-
-    body {
-      background: #f9fafc;
-      color: #333;
-    }
-
-    /* Navbar */
-    #nav {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      background: #1e3a8a;
-      /*background: maroon;*/
-      padding: 15px 40px;
-      color: #fff;
-    }
-
-    #nav h1 {
-      font-size: 1.3rem;
-      font-weight: bold;
-    }
-
-    #nav a {
-      color: #fff;
-      text-decoration: none;
-      font-weight: 500;
-    }
-
-    /* Hero Section */
-    #hero {
-      /*background-image: url('../static/basetemp/bg_red-blue-white2.png');
-      background-size:200px 300px;
-      background-repeat:repeat x;
-      background-position:left bottom;
-      background-attachment:fixed;
-     
-      /*background:linear-gradient(to bottom right, #ffffff 0%, #ffffff 50%, transparent 51%), linear-gradient(to bottom right, transparent 0%, #d12028 30%, #a1131c 60%, #0d2c6e 100%);*/
-      /*background: linear-gradient(to right, #af1e1eff, #f63b3bff);*/
-      /*color: #fff;*/
-      background: linear-gradient(to right, #1e40af, #3b82f6);
-      
-      text-align: center;
-      padding: 80px 20px;
-      color: #fff;
-
-
-    }
-
-    #hero h2 {
-      font-size: 2.5rem;
-      margin-bottom: 15px;
-    }
-
-    #hero p {
-      font-size: 1.2rem;
-      margin-bottom: 25px;
-    }
-
-    #hero button {
-      background: #facc15;
-      border: none;
-      padding: 12px 25px;
-      border-radius: 25px;
-      font-size: 1rem;
-      font-weight: bold;
-      cursor: pointer;
-      transition: 0.3s;
-    }
-
-    #hero button:hover {
-      background: #fde047;
-    }
-
-    /* Modules Section */
-    #modules {
-      display: flex;
-      justify-content: center;
-      gap: 30px;
-      padding: 60px 20px;
-      flex-wrap: wrap;
-    }
-
-    #modules a{
-      text-decoration: none;
-    }
-
-    .card {
-      background: #fff;
-      width: 220px;
-      text-align: center;
-      padding: 25px;
-      border-radius: 15px;
-      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
-      transition: transform 0.3s, box-shadow 0.3s;
-      cursor: pointer;
-    }
-
-    .card:hover {
-      transform: translateY(-8px);
-      box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
-    }
-
-    .card img {
-      width: 60px;
-      height: 60px;
-      /*margin-bottom: 15px;*/
-      margin: 0 auto;
-      
-    }
-
-    .card h3 {
-      font-size: 1.2rem;
-      margin-top: 10px;
-      color: #1e3a8a;
-    }
-
-    .logout-btn {
-      display: inline-block;
-      /*margin-top: 1px;*/
-      padding: 3px 13px;
-      background: #dc3545;
-      /*background: #facc15;*/
-      color: #fff;
-      border-radius: 10px;
-      text-decoration: none;
-      /*font-weight: 500;*/
-      font-weight: bold;
-      transition: background 0.3s;
-    }
-
-    .logout-btn:hover {
-      background: #b02a37;
-      color: #fff;
-      /*background: #fde047;*/
-    }
-
-    /* Footer */
-    #footer {
-      background: #1e3a8a;
-      /*background: black;*/
-      color: #fff;
-      text-align: center;
-      padding: 15px;
-      margin-top: 50px;
-    }
-  </style>
+  
 </head>
+
+<style>
+/* Reset */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+html, body {
+  height: 100%;
+}
+
+body {
+  background: #ffffff; /* keep body clean white */
+  color: #333;
+}
+
+#main-container {
+  min-height: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+/* Navbar */
+#nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: #ffffff;       /* White navbar */
+  padding: 15px 40px;
+  color: #CE1126;
+  border-bottom: 3px solid #CE1126; /* thin red accent line */
+}
+
+#nav h1 {
+  font-size: 1.3rem;
+  font-weight: bold;
+  color: #CE1126;
+}
+
+#nav a {
+  color: #CE1126;
+  text-decoration: none;
+  font-weight: 500;
+}
+
+/* Hero Section */
+#hero {
+  background: #CE1126; /* Strong red section */
+  text-align: center;
+  padding: 80px 20px;
+  color: #fff;
+}
+
+#hero h2 {
+  font-size: 2.5rem;
+  margin-bottom: 15px;
+}
+
+#hero p {
+  font-size: 1.2rem;
+  margin-bottom: 25px;
+}
+
+#hero button {
+  background: #ffffff; /* White button */
+  color: #CE1126;
+  border: 2px solid #ffffff;
+  padding: 12px 25px;
+  border-radius: 25px;
+  font-size: 1rem;
+  font-weight: bold;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+#hero button:hover {
+  background: #f4f4f4;
+}
+
+/* Modules Section */
+#modules {
+  display: flex;
+  justify-content: center;
+  gap: 30px;
+  padding: 60px 20px;
+  flex-wrap: wrap;
+}
+
+#modules a {
+  text-decoration: none;
+}
+
+.card {
+  background: #ffffff;
+  width: 220px;
+  text-align: center;
+  padding: 25px;
+  border-radius: 15px;
+  border: 2px solid #CE1126; /* red outline */
+  transition: transform 0.3s, box-shadow 0.3s;
+  cursor: pointer;
+}
+
+.card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+}
+
+.card img {
+  width: 60px;
+  height: 60px;
+  margin: 0 auto;
+}
+
+.card h3 {
+  font-size: 1.2rem;
+  margin-top: 10px;
+  color: #CE1126;
+}
+
+/* Logout Button */
+.logout-btn {
+  display: inline-block;
+  padding: 3px 13px;
+  background: #ffffff;
+  border: 2px solid #CE1126;
+  color: #CE1126;
+  border-radius: 10px;
+  font-weight: bold;
+  text-decoration: none;
+  transition: all 0.3s;
+}
+
+.logout-btn:hover {
+  background: #CE1126;
+  color: #fff;
+}
+
+/* Footer */
+#footer {
+  background: #ffffff;
+  color: #CE1126;
+  text-align: center;
+  padding: 15px;
+  margin-top: auto;
+  border-top: 3px solid #CE1126; /* red accent line */
+}
+
+</style>
+
 <body>
   <!-- Main Container -->
   <div id="main-container">
